@@ -27,14 +27,14 @@ h1 {
 
 button {
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color: #0008ff;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0065b3;
 }
 
 ul {
