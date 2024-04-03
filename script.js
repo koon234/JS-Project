@@ -48,13 +48,12 @@ $(document).ready(function() {
       renderTasks();
     }
   });
-  $('#markAllCompletedBtn').click(function() {
-    tasks.forEach(function(task) {
-      task.completed = true;
+  $('#clearCompletedBtn').click(function() {
+    tasks.forEach(function(task, index) {
+      if (task.completed) {
+        tasks.splice(index, 1);
+      }
     });
-    saveTasks();
-    renderTasks();
-  });
  
 
   function saveTasks() {
