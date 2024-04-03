@@ -49,21 +49,13 @@ $(document).ready(function() {
     }
   });
   $('#markAllCompletedBtn').click(function() {
-    tasks.forEach(function(task) {
-      task.completed = true;
-    });
+    for (let i = 0; i < tasks.length; i++) {
+        tasks[i].completed = true;
+    }
     saveTasks();
     renderTasks();
-  });
+});
 
-  $('#clearCompletedBtn').click(function() {
-    tasks.forEach(function(task, index) {
-      if (task.completed) {
-        tasks.splice(index, 1);
-      }
-    });
-
- 
 
   function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
