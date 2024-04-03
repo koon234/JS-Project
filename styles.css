@@ -15,6 +15,10 @@ h1 {
   font-family: "Helvetica", sans-serif;
 }
 
+hr {
+  border: 1px solid rgb(80, 96, 116);
+}
+
 input[type="text"] {
   width: calc(100% - 80px);
   padding: 8px;
@@ -22,7 +26,7 @@ input[type="text"] {
 }
 
 button {
-  padding: 8px 12px;
+  padding: 8px 10px;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -57,7 +61,7 @@ ul {
 
 li {
   padding: 8px 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgb(80, 96, 116);
   display: flex;
   align-items: center;
   justify-content: space-between;
