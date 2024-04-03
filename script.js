@@ -48,6 +48,10 @@ $(document).ready(function() {
       renderTasks();
     }
   });
+  function deleteTask(index) {
+    tasks.splice(index, 1);
+    displayTasks();
+}
 
   function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
