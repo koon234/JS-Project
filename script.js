@@ -48,10 +48,14 @@ $(document).ready(function() {
       renderTasks();
     }
   });
-  function deleteTask(index) {
-    tasks.splice(index, 1);
-    displayTasks();
-}
+  $('#markAllCompletedBtn').click(function() {
+    tasks.forEach(function(task) {
+      task.completed = true;
+    });
+    saveTasks();
+    renderTasks();
+  });
+ 
 
   function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
