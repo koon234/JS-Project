@@ -1,9 +1,6 @@
-// script.js
 $(document).ready(function() {
-  // Load tasks from localStorage
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-  // Render tasks
   function renderTasks() {
     $('#taskList').empty();
     tasks.forEach(function(task, index) {
@@ -13,6 +10,7 @@ $(document).ready(function() {
         .appendTo($('#taskList'));
 
       const deleteBtn = $('<button>')
+        .addClass('delete-btn')
         .text('❌')
         .click(function() {
           tasks.splice(index, 1);
@@ -33,7 +31,6 @@ $(document).ready(function() {
     });
   }
 
-  // Add task
   $('#addTaskBtn').click(function() {
     const taskName = $('#taskInput').val().trim();
     if (taskName !== '') {
@@ -44,11 +41,17 @@ $(document).ready(function() {
     }
   });
 
-  // Save tasks to localStorage
+  $('#clearAllBtn').click(function() {
+    if (confirm('Are you sure you want to clear all tasks?')) {
+      tasks.splice(0, tasks.length);
+      saveTasks();
+      renderTasks();
+    }
+  });
+
   function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
-  // Initial render
   renderTasks();
 });
